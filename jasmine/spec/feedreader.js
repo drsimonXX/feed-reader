@@ -71,7 +71,7 @@ $(function() {
 		});
 	});
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    	/* Write a new test suite named "Initial Entries" */
 	describe('Initial Entries', function() {
 
         /* a test that ensures when the loadFeed
