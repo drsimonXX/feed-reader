@@ -71,7 +71,7 @@ $(function() {
 		});
 	});
 
-    	/* Write a new test suite named "Initial Entries" */
+    /* Write a new test suite named "Initial Entries" */
 	describe('Initial Entries', function() {
 
         /* a test that ensures when the loadFeed
@@ -82,13 +82,11 @@ $(function() {
          */
 		// wait for async call to finish 
 		beforeEach(function(done) {
-			loadFeed(0, function() {
-				done();
-			});
+			loadFeed(0, done);
 		});
 		
 		it('feed container has at least one entry', function() {
-			expect($('.entry').length).toBeGreaterThan(0); 
+			expect($('.feed .entry').length).toBeGreaterThan(0); 
 		});
 	});
 
@@ -100,9 +98,12 @@ $(function() {
          * loadFeed() is asynchronous.
          */
 		// wait for async calls to finish 
+		
+		var firstFeed = $('.feed').html();
+		
 		beforeEach(function(done) {
             loadFeed(1, function() {
-                firstFeed = $('.feed').html();
+                //firstFeed = $('.feed').html();
                 loadFeed(2, function() {
                     done();
                 });
